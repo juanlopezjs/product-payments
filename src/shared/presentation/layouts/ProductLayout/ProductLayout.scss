@@ -1,0 +1,12 @@
+@import '../../../application/theme/colors.scss';
+
+.product-layout-container {
+	display: flex;
+	flex-direction: column;
+
+	> .section-container {
+		width: 100%;
+		height: auto;
+		overflow-y: auto;
+	}
+}
