@@ -1,0 +1,22 @@
+@import '../../../../../shared/application/theme/colors.scss';
+
+.image-product-container {
+	display: flex;
+	flex-shrink: 0;
+	height: 80vw;
+	width: 100%;
+	@extend .bg-white;
+	border-radius: 0 0 20px 20px;
+	border-bottom-width: 1px;
+	border-style: solid;
+	@extend .border-neutral-400t;
+
+	> .image {
+		display: block;
+		object-fit: contain;
+		object-position: center;
+		height: 100%;
+		width: 100%;
+		padding: 1.6rem;
+	}
+}
