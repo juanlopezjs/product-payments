@@ -1,0 +1,21 @@
+@import '../../../../../shared/application/theme/colors.scss';
+
+.payment-button-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	margin-top: auto;
+	bottom: 0px;
+	width: min(100%, 500px);
+	z-index: 999;
+
+	> .payment-button {
+		@extend .bg-primary;
+		@extend .color-white;
+		width: 100%;
+		line-height: 0;
+		padding: 2.4rem 0;
+		border-radius: 0.6rem;
+	}
+}

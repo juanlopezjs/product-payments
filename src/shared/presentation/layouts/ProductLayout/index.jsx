@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import './ProductLayout.scss';
 import Header from '../../components/latyouts/Header';
+import './ProductLayout.scss';
 
 const ProductLayout = ({ children }) => {
 	return (
