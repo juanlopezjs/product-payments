@@ -1,21 +1,78 @@
 module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:react-hooks/recommended',
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier",
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-  settings: { react: { version: '18.2' } },
-  plugins: ['react-refresh'],
+  parser: "babel-eslint",
+  parserOptions: {
+    ecmaVersion: 2019,
+    sourceType: "module",
+    allowImportExportEverywhere: true,
+  },
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+    jest: true,
+  },
+  plugins: [],
   rules: {
-    'react/jsx-no-target-blank': 'off',
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "arrow-body-style": "off",
+    "no-param-reassign": ["off"],
+    "no-unused-vars": [
+      "error",
+      {
+        vars: "local",
+        args: "none",
+      },
+    ],
+    "no-plusplus": "off",
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": "off",
+    "react/display-name": "off",
+    camelcase: "off",
+    radix: ["error", "as-needed"],
+    "consistent-return": [
+      "error",
+      {
+        treatUndefinedAsUnspecified: false,
+      },
+    ],
+    "no-bitwise": [
+      "error",
+      {
+        allow: ["~"],
+      },
+    ],
+    "no-shadow": [
+      "error",
+      {
+        allow: ["Route", "pmt"],
+      },
+    ],
+    "no-console": [
+      "warn",
+      {
+        allow: ["warn", "error"],
+      },
     ],
   },
-}
+  settings: {
+    "import/extensions": [".js", ".jsx"],
+    "import/resolver": {
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
+    react: {
+      version: "detect",
+    },
+  },
+};
