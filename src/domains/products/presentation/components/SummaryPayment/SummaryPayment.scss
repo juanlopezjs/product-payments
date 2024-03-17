@@ -1,0 +1,76 @@
+@import '../../../../../shared/application/theme/colors.scss';
+
+.summary-payment-container{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.6rem;
+	gap: 0.8rem;
+    
+    >.title-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        margin-bottom: 1.6rem;
+
+        >.title{
+            @extend .color-secondary;
+        }
+
+        >.description{
+            @extend .color-secondary-900t;
+            font-size: 1.4rem;
+        }
+    }
+
+    >.confirm-button{
+        margin-top: 1.6rem;
+        @extend .bg-primary;
+		@extend .color-white;
+		width: 100%;
+		line-height: 0;
+		padding: 2.4rem 0;
+		border-radius: 0.6rem;
+
+		&:hover {
+			@extend .bg-primary-600s;
+		}
+
+		&:active {
+			@extend .bg-primary-700s;
+		}
+    }
+
+    >.detail-container{
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+
+        >.detail-title{
+            font-weight: 700;
+            @extend .color-secondary;
+            font-size: 1.4rem;
+        }
+
+        >.detail-description{
+            font-weight: 500;
+            @extend .color-secondary-900t;
+            font-size: 1.4rem;
+        }
+    }
+
+    >.total-container{
+        margin-top: 1.6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.6rem 1.2rem;
+        @extend .bg-primary-100t;
+        @extend .color-primary;
+        border-radius: 0.6rem;
+        font-weight: 500;
+        font-size: 1.4rem;
+    }
+}

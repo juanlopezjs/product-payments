@@ -1,13 +1,9 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 import './InfoProduct.scss';
+import { formatPrice } from '../../../application/helpers/format';
 
-const InfoProduct = ({ title, description, price }) => {
-	const formatPrice = new Intl.NumberFormat('en-US', {
-		style: 'currency',
-		currency: 'USD',
-    });
-    
+const InfoProduct = ({ title, description, price }) => {  
 	return (
 		<section className="info-product-container">
 			<h1 className="title-product">{title}</h1>
