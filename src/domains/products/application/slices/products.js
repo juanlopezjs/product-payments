@@ -7,7 +7,7 @@ const initialState = {
 	showModalCredit: false,
 	showModalSummary: false,
 	payment: {},
-	focusElement: ''
+	focusElement: '',
 };
 
 export const getProductById = createAsyncThunk('products/getProductById', async (id, { rejectWithValue }) => {
@@ -37,6 +37,14 @@ const Products = createSlice({
 		setLoader: (state, { payload }) => {
 			state.loader = payload;
 		},
+		setResetState: (state, { payload }) => {
+			state.product = {};
+			state.loader = true;
+			state.showModalCredit = false;
+			state.showModalSummary = false;
+			state.payment = {};
+			state.focusElement = '';
+		},
 	},
 	extraReducers: ({ addCase }) => {
 		addCase(getProductById.pending, (state) => {
@@ -49,6 +57,7 @@ const Products = createSlice({
 	},
 });
 
-export const { setShowModalCredit, setPayment, setFocusElement, setShowModalSummary, setLoader } = Products.actions;
+export const { setShowModalCredit, setPayment, setFocusElement, setShowModalSummary, setLoader, setResetState } =
+	Products.actions;
 
 export default Products;

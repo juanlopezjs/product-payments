@@ -1,4 +1,4 @@
-import { Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { importFiles } from '../application/helpers/common-functions';
 
 const importRouter = import.meta.glob('../../domains/**/infrastructure/routing/router.*');

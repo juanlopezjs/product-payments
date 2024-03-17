@@ -3,8 +3,9 @@ export const paymentCreditCardFields = Object.freeze({
 	EXPIRY: 'expiry',
 	CVC: 'cvc',
     NAME: 'cardName',
-    TYPE_ID: 'type_id',
-    ID: 'paymentId'
+    TYPE_ID: 'typeId',
+    NUMBER_ID: 'numerId',
+    PAYMENT_ID: 'paymentId'
 });
 
 export const ID_TYPE_OPTIONS = [
