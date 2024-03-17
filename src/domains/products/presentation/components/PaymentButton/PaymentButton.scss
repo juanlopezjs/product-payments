@@ -17,5 +17,13 @@
 		line-height: 0;
 		padding: 2.4rem 0;
 		border-radius: 0.6rem;
+
+		&:hover {
+			@extend .bg-primary-600s;
+		}
+
+		&:active {
+			@extend .bg-primary-700s;
+		}
 	}
 }

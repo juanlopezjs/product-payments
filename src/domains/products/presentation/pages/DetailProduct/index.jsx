@@ -8,6 +8,7 @@ import { getProductById } from '../../../application/slices/products';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { getLoading, getProduct } from '../../../application/selectors/products';
 import Spinner from '../../../../../shared/presentation/components/Spinner';
+import PayCreditCard from '../../components/PayCreditCard';
 
 const DetailProduct = () => {
 	const dispatch = useDispatch();
@@ -27,7 +28,8 @@ const DetailProduct = () => {
 				<>
 					<ImageProduct url={product.image} />
 					<InfoProduct title={product.title} description={product.description} price={product.price} />
-					<PaymentButton />
+					<PaymentButton productId={product.id} title={product.title} price={product.price} />
+					<PayCreditCard />
 				</>
 			)}
 		</section>
