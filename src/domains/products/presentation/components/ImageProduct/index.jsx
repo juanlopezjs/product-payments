@@ -5,7 +5,7 @@ import './ImageProduct.scss';
 const ImageProduct = ({ url }) => {
 	return (
 		<section className="image-product-container">
-			<img className="image" src={url} />
+			<img className="image" src={url} alt='Product Image'/>
 		</section>
 	);
 };
