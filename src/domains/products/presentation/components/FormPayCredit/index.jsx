@@ -10,7 +10,6 @@ import {
 	setPayment,
 	setShowModalCredit,
 	setShowModalSummary,
-	setLoader,
 } from '../../../application/slices/products';
 import { gePayment } from '../../../application/selectors/products';
 import { v4 as uuidv4 } from 'uuid';
@@ -39,13 +38,9 @@ const FormPayCredit = () => {
 	};
 
 	const onSubmit = (values) => {
-		dispatch(setLoader(true));
-		setTimeout(() => {
-			dispatch(setLoader(false));
-			dispatch(setPayment({ paymentId: uuidv4(), ...values }));
-			dispatch(setShowModalCredit(false));
-			dispatch(setShowModalSummary(true));
-		}, 1000);
+		dispatch(setPayment({ paymentId: uuidv4(), ...values }));
+		dispatch(setShowModalCredit(false));
+		dispatch(setShowModalSummary(true));
 	};
 
 	return (
