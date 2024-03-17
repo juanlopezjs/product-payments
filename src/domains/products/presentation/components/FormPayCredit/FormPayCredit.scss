@@ -1,0 +1,66 @@
+@import '../../../../../shared/application/theme/colors.scss';
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+	margin-top: 1.8rem;
+
+	> .row {
+		display: flex;
+		gap: 1rem;
+
+		> .input-group {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+
+			&.flex-2 {
+				flex: 2;
+				> label {
+					visibility: hidden;
+				}
+			}
+
+			> label {
+				@extend .color-secondary-900t;
+				font-size: 1.4rem;
+				font-weight: 400;
+			}
+
+			> .input {
+				border-radius: 0.4rem;
+				box-sizing: border-box;
+				padding: 0.6rem 1rem;
+				border-style: solid;
+				border-width: 1px;
+				@extend .border-primary;
+				width: 100%;
+			}
+
+			> .error {
+				@extend .color-error;
+				font-size: 1.4rem;
+				margin-top: 0.6rem;
+			}
+		}
+	}
+
+	> .continue-button {
+		margin-top: 1.6rem;
+		@extend .bg-primary;
+		@extend .color-white;
+		width: 100%;
+		line-height: 0;
+		padding: 2.4rem 0;
+		border-radius: 0.6rem;
+
+		&:hover {
+			@extend .bg-primary-600s;
+		}
+
+		&:active {
+			@extend .bg-primary-700s;
+		}
+	}
+}
