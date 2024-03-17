@@ -1,20 +1,24 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { setPayment, setShowModalCredit } from '../../../application/slices/products';
+import { setLoader, setPayment, setShowModalCredit } from '../../../application/slices/products';
 import './PaymentButton.scss';
 
 const PaymentButton = ({ productId, title, price }) => {
 	const dispatch = useDispatch();
 	const HandlePayCredit = () => {
-		dispatch(
-			setPayment({
-				productId,
-				title,
-				price
-			}),
-		);
-		dispatch(setShowModalCredit(true));
+		dispatch(setLoader(true));
+		setTimeout(() => {
+			dispatch(setLoader(false));
+			dispatch(
+				setPayment({
+					productId,
+					title,
+					price,
+				}),
+			);
+			dispatch(setShowModalCredit(true));
+		}, 1000);
 	};
 
 	return (

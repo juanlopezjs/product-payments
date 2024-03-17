@@ -27,3 +27,7 @@ export const geFocusElement = createSelector(productsState, (products) => {
 	return focusElement;
 });
 
+export const geShowModalSummary = createSelector(productsState, (products) => {
+	const { showModalSummary } = products;
+	return showModalSummary;
+});

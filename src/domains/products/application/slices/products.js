@@ -5,6 +5,7 @@ const initialState = {
 	product: {},
 	loader: true,
 	showModalCredit: false,
+	showModalSummary: false,
 	payment: {},
 	focusElement: ''
 };
@@ -30,6 +31,12 @@ const Products = createSlice({
 		setFocusElement: (state, { payload }) => {
 			state.focusElement = payload;
 		},
+		setShowModalSummary: (state, { payload }) => {
+			state.showModalSummary = payload;
+		},
+		setLoader: (state, { payload }) => {
+			state.loader = payload;
+		},
 	},
 	extraReducers: ({ addCase }) => {
 		addCase(getProductById.pending, (state) => {
@@ -42,6 +49,6 @@ const Products = createSlice({
 	},
 });
 
-export const { setShowModalCredit, setPayment, setFocusElement } = Products.actions;
+export const { setShowModalCredit, setPayment, setFocusElement, setShowModalSummary, setLoader } = Products.actions;
 
 export default Products;

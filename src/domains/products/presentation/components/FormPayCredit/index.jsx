@@ -5,7 +5,13 @@ import './FormPayCredit.scss';
 import { ID_TYPE_OPTIONS, paymentCreditCardFields } from '../../../application/constants/paymentCreditCard';
 import { paymentCreditCardSchema } from '../../../application/schema/paymentCreditCard';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFocusElement, setPayment, setShowModalCredit } from '../../../application/slices/products';
+import {
+	setFocusElement,
+	setPayment,
+	setShowModalCredit,
+	setShowModalSummary,
+	setLoader,
+} from '../../../application/slices/products';
 import { gePayment } from '../../../application/selectors/products';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -20,6 +26,7 @@ const FormPayCredit = () => {
 	} = useForm({
 		mode: 'onChange',
 		resolver: yupResolver(paymentCreditCardSchema),
+		defaultValues: payment,
 	});
 
 	const handleInputChange = (evt) => {
@@ -32,8 +39,13 @@ const FormPayCredit = () => {
 	};
 
 	const onSubmit = (values) => {
-		dispatch(setPayment({ paymentId: uuidv4(), ...values }));
-		dispatch(setShowModalCredit(false));
+		dispatch(setLoader(true));
+		setTimeout(() => {
+			dispatch(setLoader(false));
+			dispatch(setPayment({ paymentId: uuidv4(), ...values }));
+			dispatch(setShowModalCredit(false));
+			dispatch(setShowModalSummary(true));
+		}, 1000);
 	};
 
 	return (
