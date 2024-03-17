@@ -27,9 +27,9 @@ const PayCreditCard = () => {
 				<Sheet.Header />
 				<Sheet.Content>
 					<Sheet.Scroller draggableAt="both">
-						<section className="pay-credit-container">
-							<Cards number={number} expiry={expiry} cvc={cvc} name={name} focused={focus} />
-							<FormPayCredit />
+						<section className="pay-credit-container" data-testid="pay-credit-container">
+							<Cards number={number} expiry={expiry} cvc={cvc} name={name} focused={focus} data-testid="cards-component"/>
+							<FormPayCredit/>
 						</section>
 					</Sheet.Scroller>
 				</Sheet.Content>

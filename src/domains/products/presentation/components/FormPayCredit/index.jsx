@@ -45,7 +45,7 @@ const FormPayCredit = () => {
 	};
 
 	return (
-		<form className="form-container" onSubmit={handleSubmit(onSubmit)}>
+		<form className="form-container" onSubmit={handleSubmit(onSubmit)} data-testid="form-container">
 			<div className="row">
 				<div className="input-group">
 					<label>Card number</label>
