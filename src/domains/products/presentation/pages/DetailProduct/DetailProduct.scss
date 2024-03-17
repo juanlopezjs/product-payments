@@ -1,6 +1,18 @@
-.detail-product-container{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
+@import '../../../../../shared/application/theme/colors.scss';
+
+.detail-product-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: min(100%, 700px);
+}
+
+@include large-view {
+	.detail-product-container {
+		border-radius: 0.6rem;
+		border-width: 1px;
+		border-style: solid;
+		border-color: $neutral;
+		padding: 1.6rem;
+	}
 }

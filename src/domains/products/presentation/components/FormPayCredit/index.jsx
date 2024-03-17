@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
+import ShortUniqueId from 'short-unique-id'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
 import './FormPayCredit.scss';
 import { ID_TYPE_OPTIONS, paymentCreditCardFields } from '../../../application/constants/paymentCreditCard';
@@ -12,11 +13,11 @@ import {
 	setShowModalSummary,
 } from '../../../application/slices/products';
 import { gePayment } from '../../../application/selectors/products';
-import { v4 as uuidv4 } from 'uuid';
 
 const FormPayCredit = () => {
 	const dispatch = useDispatch();
 	const payment = useSelector(gePayment);
+	const uid = new ShortUniqueId();
 	const {
 		register,
 		handleSubmit,
@@ -38,7 +39,7 @@ const FormPayCredit = () => {
 	};
 
 	const onSubmit = (values) => {
-		dispatch(setPayment({ paymentId: uuidv4(), ...values }));
+		dispatch(setPayment({ [paymentCreditCardFields.PAYMENT_ID]: uid.rnd(), ...values }));
 		dispatch(setShowModalCredit(false));
 		dispatch(setShowModalSummary(true));
 	};
@@ -147,12 +148,12 @@ const FormPayCredit = () => {
 				<div className="input-group flex-2">
 					<label>id</label>
 					<Controller
-						name={paymentCreditCardFields.ID}
+						name={paymentCreditCardFields.NUMBER_ID}
 						control={control}
 						onFocus={handleInputFocus}
 						render={({ field }) => <input {...field} className="input" type="number" onFocus={handleInputFocus} />}
 					/>
-					<p className="error">{errors[paymentCreditCardFields.ID]?.message}</p>
+					<p className="error">{errors[paymentCreditCardFields.NUMBER_ID]?.message}</p>
 				</div>
 			</div>
 			<button type="submit" className="continue-button">

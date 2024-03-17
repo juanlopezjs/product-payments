@@ -22,22 +22,20 @@ const PayCreditCard = () => {
 	const name = payment[paymentCreditCardFields.NAME] || '';
 
 	return (
-		<section>
-			<Sheet isOpen={showModal} onClose={HandleCloseModal} detent="content-height">
-				<Sheet.Container>
-					<Sheet.Header />
-					<Sheet.Content>
-						<Sheet.Scroller draggableAt="both">
-							<section className="pay-credit-container">
-								<Cards number={number} expiry={expiry} cvc={cvc} name={name} focused={focus} />
-								<FormPayCredit />
-							</section>
-						</Sheet.Scroller>
-					</Sheet.Content>
-				</Sheet.Container>
-				<Sheet.Backdrop />
-			</Sheet>
-		</section>
+		<Sheet isOpen={showModal} onClose={HandleCloseModal} detent="content-height">
+			<Sheet.Container>
+				<Sheet.Header />
+				<Sheet.Content>
+					<Sheet.Scroller draggableAt="both">
+						<section className="pay-credit-container">
+							<Cards number={number} expiry={expiry} cvc={cvc} name={name} focused={focus} />
+							<FormPayCredit />
+						</section>
+					</Sheet.Scroller>
+				</Sheet.Content>
+			</Sheet.Container>
+			<Sheet.Backdrop />
+		</Sheet>
 	);
 };
 

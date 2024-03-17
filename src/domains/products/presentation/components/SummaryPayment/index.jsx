@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { gePayment, geShowModalSummary } from '../../../application/selectors/products';
 import { setLoader, setShowModalSummary } from '../../../application/slices/products';
 import { formatPrice } from '../../../application/helpers/format';
+import { history } from "../../../../../shared/application/helpers/history";
+import { successPaymentRoute } from '../../../infrastructure/routing/routes';
 
 const SummaryPayment = () => {
 	const showModal = useSelector(geShowModalSummary);
@@ -14,10 +16,12 @@ const SummaryPayment = () => {
 
     const HandleConfirm = () => {
         dispatch(setLoader(true));
-        setTimeout(() => {
+       setTimeout(() => {
             dispatch(setLoader(false));
-          }, 1000);
+            history.push(successPaymentRoute(1));
+        }, 1000);
     }
+
 	return (
 		<Sheet isOpen={showModal} onClose={HandleCloseModal} detent="content-height">
 			<Sheet.Container>

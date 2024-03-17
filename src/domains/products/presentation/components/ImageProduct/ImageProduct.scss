@@ -20,3 +20,9 @@
 		padding: 1.6rem;
 	}
 }
+
+@include large-view{
+	.image-product-container {
+		height: min(40vw, 500px);
+	}
+}
