@@ -2,7 +2,7 @@ import React from 'react';
 import Sheet from 'react-modal-sheet';
 import './SummaryPayment.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { gePayment, geShowModalSummary } from '../../../application/selectors/products';
+import { getPayment, geShowModalSummary } from '../../../application/selectors/products';
 import { setLoader, setShowModalSummary } from '../../../application/slices/products';
 import { formatPrice } from '../../../application/helpers/format';
 import { history } from "../../../../../shared/application/helpers/history";
@@ -10,7 +10,7 @@ import { successPaymentRoute } from '../../../infrastructure/routing/routes';
 
 const SummaryPayment = () => {
 	const showModal = useSelector(geShowModalSummary);
-	const payment = useSelector(gePayment);
+	const payment = useSelector(getPayment);
 	const dispatch = useDispatch();
 	const HandleCloseModal = () => dispatch(setShowModalSummary(false));
 

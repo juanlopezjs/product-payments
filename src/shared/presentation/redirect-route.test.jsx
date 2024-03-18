@@ -5,7 +5,7 @@ import { UnauthenticatedRoute } from './redirect-route';
 import { homeRoute } from '../infrastructure/routing/routes';
 
 describe('UnauthenticatedRoute', () => {
-  it('renders the component if user is not authenticated', () => {
+  test('renders the component if user is not authenticated', () => {
     
     const FakeComponent = () => <div data-testid="fake-component">Fake Component</div>;
     const FakeLayout = ({ children }) => <div data-testid="fake-layout">{children}</div>;
@@ -20,7 +20,7 @@ describe('UnauthenticatedRoute', () => {
     expect(screen.getByTestId('fake-layout')).toBeInTheDocument();
   });
 
-  it('redirects to previous path or home route if user is authenticated', () => {
+  test('redirects to previous path or home route if user is authenticated', () => {
     // Simulamos un usuario autenticado
     localStorage.setItem('user', 'authenticated');
     localStorage.setItem('prevPath', '/previous');

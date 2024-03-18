@@ -12,12 +12,12 @@ export const getLoading = createSelector(productsState, (products) => {
 	return loader;
 });
 
-export const geShowModalCredit = createSelector(productsState, (products) => {
+export const getShowModalCredit = createSelector(productsState, (products) => {
 	const { showModalCredit } = products;
 	return showModalCredit;
 });
 
-export const gePayment = createSelector(productsState, (products) => {
+export const getPayment = createSelector(productsState, (products) => {
 	const { payment } = products;
 	return payment;
 });
