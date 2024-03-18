@@ -51,10 +51,13 @@ export default defineConfig({
 		globals: true,
 		setupFiles: './src/setupTests.js',
 		coverage: {
+			thresholds: {
+				lines: 80
+			},
 			all: true,
 			reporter: ['text', 'json-summary', 'json'],
 			include: ['src'],
-      		exclude: ['src/types', '**/*.test.ts'],
-		  }
+			exclude: ['src/types', '**/*.test.ts'],
+		},
 	},
 });
