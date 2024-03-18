@@ -1,0 +1,35 @@
+@import '../../../../../shared/application/theme/colors.scss';
+
+.payment-button-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	margin-top: auto;
+	bottom: 0px;
+	width: 100%;
+	z-index: 999;
+
+	> .payment-button {
+		@extend .bg-primary;
+		@extend .color-white;
+		width: 100%;
+		line-height: 0;
+		padding: 2.4rem 0;
+		border-radius: 0.6rem;
+
+		&:hover {
+			@extend .bg-primary-600s;
+		}
+
+		&:active {
+			@extend .bg-primary-700s;
+		}
+	}
+}
+
+@include large-view{
+	.payment-button-container {
+		width: 200px;
+	}
+}

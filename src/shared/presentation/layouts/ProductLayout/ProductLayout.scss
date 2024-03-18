@@ -1,0 +1,27 @@
+@import '../../../application/theme/colors.scss';
+
+.product-layout-container {
+	display: flex;
+	flex-direction: column;
+
+	> .section-container {
+		display: flex;
+		width: 100%;
+		height: min(100%, calc(100vh - 64px));
+		overflow-y: auto;
+		justify-content: center;
+	}
+}
+
+@include large-view {
+	.react-modal-sheet-container {
+		max-width: 500px;
+		top: 50% !important;
+		left: 50% !important;
+		right: auto;
+		bottom: auto;
+		margin-right: -50%;
+		transform: translate(-50%, -50%) !important;
+        min-height: max-content !important;
+	}
+}
