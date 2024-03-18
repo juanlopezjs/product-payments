@@ -1,9 +1,6 @@
 import { Switch } from 'react-router-dom';
-import { importFiles } from '../application/helpers/common-functions';
-
-const importRouter = import.meta.glob('../../domains/**/infrastructure/routing/router.*');
-const routerDomain = await importFiles(importRouter);
-const routes = routerDomain.map((route) => route.default);
+import productRouter from "../../domains/products/infrastructure/routing/router"
+const routes = [productRouter];
 
 const Router = () => {
 	const defaultLayout = ({ children }) => <>{children}</>;
