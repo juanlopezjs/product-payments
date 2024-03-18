@@ -57,7 +57,7 @@ const FormPayCredit = () => {
 								{...field}
 								className="input"
 								type="number"
-								maxLength={19}
+								maxLength="19"
 								onFocus={handleInputFocus}
 								onChange={(e) => {
 									field.onChange(e);
@@ -80,6 +80,7 @@ const FormPayCredit = () => {
 								{...field}
 								className="input"
 								type="text"
+								maxLength="20"
 								onFocus={handleInputFocus}
 								onChange={(e) => {
 									field.onChange(e);
@@ -102,7 +103,7 @@ const FormPayCredit = () => {
 								{...field}
 								className="input"
 								type="number"
-								maxLength={4}
+								maxLength="4"
 								onFocus={handleInputFocus}
 								onChange={(e) => {
 									field.onChange(e);
@@ -124,7 +125,7 @@ const FormPayCredit = () => {
 								{...field}
 								className="input"
 								type="number"
-								maxLength={4}
+								maxLength="4"
 								onFocus={handleInputFocus}
 								onChange={(e) => {
 									field.onChange(e);
@@ -154,7 +155,7 @@ const FormPayCredit = () => {
 						name={paymentCreditCardFields.NUMBER_ID}
 						control={control}
 						onFocus={handleInputFocus}
-						render={({ field }) => <input {...field} className="input" type="text" maxLength={12} onFocus={handleInputFocus} />}
+						render={({ field }) => <input {...field} className="input" type="text" maxLength="12" onFocus={handleInputFocus} />}
 					/>
 					<p className="error">{errors[paymentCreditCardFields.NUMBER_ID]?.message}</p>
 				</div>
