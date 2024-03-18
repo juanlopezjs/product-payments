@@ -3,15 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import Cards from 'react-credit-cards-2';
 import Sheet from 'react-modal-sheet';
 import FormPayCredit from '../FormPayCredit';
-import { geFocusElement, gePayment, geShowModalCredit } from '../../../application/selectors/products';
+import { geFocusElement, getPayment, getShowModalCredit } from '../../../application/selectors/products';
 import { setShowModalCredit } from '../../../application/slices/products';
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
 import './PayCreditCard.scss';
 import { paymentCreditCardFields } from '../../../application/constants/paymentCreditCard';
 
 const PayCreditCard = () => {
-	const showModal = useSelector(geShowModalCredit);
-	const payment = useSelector(gePayment);
+	const showModal = useSelector(getShowModalCredit);
+	const payment = useSelector(getPayment);
 	const focus = useSelector(geFocusElement);
 	const dispatch = useDispatch();
 	const HandleCloseModal = () => dispatch(setShowModalCredit(false));

@@ -12,11 +12,11 @@ import {
 	setShowModalCredit,
 	setShowModalSummary,
 } from '../../../application/slices/products';
-import { gePayment } from '../../../application/selectors/products';
+import { getPayment } from '../../../application/selectors/products';
 
 const FormPayCredit = () => {
 	const dispatch = useDispatch();
-	const payment = useSelector(gePayment);
+	const payment = useSelector(getPayment);
 	const uid = new ShortUniqueId();
 	const {
 		register,

@@ -1,7 +1,7 @@
 import React from 'react';
 import successLogo from '/success.svg';
 import './SuccessPayment.scss';
-import { gePayment } from '../../../application/selectors/products';
+import { getPayment } from '../../../application/selectors/products';
 import { useDispatch, useSelector } from 'react-redux';
 import { history } from '../../../../../shared/application/helpers/history';
 import { productRoute } from '../../../infrastructure/routing/routes';
@@ -9,7 +9,7 @@ import { setResetState } from '../../../application/slices/products';
 
 const SuccessPayment = () => {
 	const dispatch = useDispatch();
-	const payment = useSelector(gePayment);
+	const payment = useSelector(getPayment);
 
 	const HandleViewOtherProduct = () => {
 		dispatch(setResetState());
